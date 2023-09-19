@@ -2,7 +2,7 @@
 class Avion extends Volador implements PuedeAterrizarEnPista1 {
     public Avion() {
         nombre = "Avion";
-        codigo = "LV-HYU";
+        codigo = "DFK-98";
         tipo = "Comercial";
     }
 
@@ -11,5 +11,4 @@ class Avion extends Volador implements PuedeAterrizarEnPista1 {
         return true;
     }
 }
-
 

@@ -22,27 +22,20 @@ public class Main {
             if (objeto instanceof PuedeAterrizarEnPista1) {
                 PuedeAterrizarEnPista1 voladorPista1 = (PuedeAterrizarEnPista1) objeto;
                 if (voladorPista1.puedeAterrizarEnPista1()) {
-                    System.out.println(objeto.toString() + ": Puede descender pista 1");
+                    System.out.println(objeto.toString() + ": Puede aterrizar pista 1");
                 } else {
                     System.out.println(objeto.toString() + ": No es posible aterrizar en pista 1.");
                 }
             } else if (objeto instanceof PuedeAterrizarEnPista2) {
                 PuedeAterrizarEnPista2 voladorPista2 = (PuedeAterrizarEnPista2) objeto;
                 if (voladorPista2.puedeAterrizarEnPista2()) {
-                    System.out.println(objeto.toString() + ": Puede descender pista 2");
+                    System.out.println(objeto.toString() + ": Aterrizaje en pista 2 autorizado. Puede aterrizar pista 2");
                 } else {
-                    System.out.println(objeto.toString() + ": No es posible aterrizar en pista 2.");
+                    System.out.println(objeto.toString() + ": Aterrizaje en pista 2 no autorizado. No es posible aterrizar.");
 
-                    // Solicitar autorización adicional
-                    boolean autorizacion = voladorPista2.solicitarAutorizacion();
-                    if (autorizacion) {
-                        System.out.println("Aterrizaje en pista 2 autorizado.");
-                    } else {
-                        System.out.println("Aterrizaje en pista 2 no autorizado.");
-                    } 
                 }
             } else {
-                System.out.println(objeto.toString() + ": No se puede determinar la pista de aterrizaje.");
+                System.out.println(objeto.toString() + ": No es posible aterrizar");
             }
         }
     }
