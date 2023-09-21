@@ -1,15 +1,20 @@
-// Clase concreta para el objeto Helicoptero
-class Helicoptero extends Volador implements PuedeAterrizarEnPista1 {
-    public Helicoptero() {
-        nombre = "Helicoptero";
-        codigo = "A7-JOS";
-        tipo = "Comercial";
+public class Helicoptero implements Volador {
+    private String nombre;
+    private String codigo;
+    private String tipo;
+
+    public Helicoptero(String nombre, String codigo, String tipo) {
+        this.nombre = nombre;
+        this.codigo = codigo;
+        this.tipo = tipo;
     }
 
     @Override
-    public boolean puedeAterrizarEnPista1() {
+    public boolean aterrizarEnPista1() {
         return true;
     }
+    @Override
+    public String toString() {
+    return "Volador " + nombre + ", " + codigo + ", " + tipo + ":";
+    }
 }
-
-

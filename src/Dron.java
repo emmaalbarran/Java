@@ -1,42 +1,20 @@
-import java.util.Scanner;
+public class Dron implements Volador {
+    private String nombre;
+    private String codigo;
+    private String tipo;
 
-// Clase Dron
-class Dron extends Volador implements PuedeAterrizarEnPista2 {
-    private boolean autorizacionSolicitada = false;
-    private boolean autorizacionConfirmada = false;
-
-    public Dron() {
-        nombre = "Dron";
-        codigo = "T-04";
-        tipo = "Oficial";
+    public Dron(String nombre, String codigo, String tipo) {
+        this.nombre = nombre;
+        this.codigo = codigo;
+        this.tipo = tipo;
     }
 
     @Override
-    public boolean puedeAterrizarEnPista2() {
-        if (!autorizacionSolicitada) {
-            autorizacionSolicitada = true; // Marcar que la autorización ha sido solicitada
-            autorizacionConfirmada = solicitarAutorizacion(); // Guardar el resultado de la autorización
-        }
-
-        // Si se ha confirmado la autorización, el dron puede aterrizar en la pista 2
-        return autorizacionConfirmada;
+    public boolean aterrizarEnPista1() {
+        return false;
     }
-
     @Override
-    public boolean solicitarAutorizacion() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("¿Autorizar aterrizaje en pista 2 para " + nombre + "? (SI/NO): ");
-        String respuesta = scanner.nextLine().trim().toLowerCase(); 
-        return respuesta.equalsIgnoreCase("si"); 
-    }
-
-    @Override
-    public boolean confirmarAutorizacion() {
-        autorizacionConfirmada = true;
-        return true;
+    public String toString() {
+    return "Volador " + nombre + ", " + codigo + ", " + tipo + ":";
     }
 }
-
-
-
-

@@ -1,14 +1,21 @@
-// Clase concreta para el objeto Avioneta
-class Avioneta extends Volador implements PuedeAterrizarEnPista1 {
-    public Avioneta() {
-        nombre = "Avioneta";
-        codigo = "N02588";
-        tipo = "Comercial";
+public class Avioneta implements Volador {
+    private String nombre;
+    private String codigo;
+    private String tipo;
+
+    public Avioneta(String nombre, String codigo, String tipo) {
+        this.nombre = nombre;
+        this.codigo = codigo;
+        this.tipo = tipo;
     }
 
     @Override
-    public boolean puedeAterrizarEnPista1() {
+    public boolean aterrizarEnPista1() {
         return true;
     }
-}
 
+    @Override
+    public String toString() {
+        return "Volador " + nombre + ", " + codigo + ", " + tipo + ":";
+    }
+}
